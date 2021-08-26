@@ -1,0 +1,155 @@
+.backgroundHome {
+  background-image: url('../../Assets/img/backgroundHome.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.backgroundHome h2 {
+  color: #ecae31;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.backgroundHome h5 {
+  width: 70%;
+  color: white;
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.estrela {
+  font-size: 46px;
+  color: #ecae31;
+}
+
+.sobreNos,
+.galeria {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  margin: 60px 0px;
+}
+
+.textoSobreNos {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.textoSobreNos h2 {
+  font-size: 20px;
+  font-weight: bolder;
+  color: #ecae31;
+  margin-bottom: 30px;
+}
+
+.textoSobreNos h5 {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #000;
+  margin-bottom: 30px;
+}
+
+.textoSobreNos p {
+  font-size: 1rem;
+  color: #2f2f2f;
+  line-height: 25px;
+  margin-right: 40px;
+}
+
+.imgSobreNos {
+  width: 40%;
+}
+
+.hotelHome {
+  width: 100%;
+}
+
+.containerFlexGaleria {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.containerGaleria {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.card {
+  background-color: #fff;
+  width: 250px;
+  height: auto;
+  margin: 10px;
+  border-radius: 15px;
+  margin-top: 40px;
+}
+
+/*outrooo*/
+.cardTitle h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.cardTitle h2:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  background-color: #ed2b84;
+  margin: 0 auto;
+  margin-top: 8px;
+}
+
+.containerCards {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.ajuda {
+}
+
+.card-img {
+  height: 190px;
+  margin-bottom: 15px;
+  background-size: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.card h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25em;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
