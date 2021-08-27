@@ -33,8 +33,7 @@
   color: #ecae31;
 }
 
-.sobreNos,
-.galeria {
+.sobreNos {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -70,7 +69,7 @@
 
 .textoSobreNos p {
   font-size: 1rem;
-  color: #2f2f2f;
+  color: #565656;
   line-height: 25px;
   margin-right: 40px;
 }
@@ -83,12 +82,23 @@
   width: 100%;
 }
 
-.containerFlexGaleria {
+.galeria {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #ddd;
+  padding: 40px 0px;
+}
+
+.containerFlexServicos {
   max-width: 960px;
   margin: 0 auto;
 }
 
-.containerGaleria {
+.containerServicos {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -105,51 +115,21 @@
   margin-top: 40px;
 }
 
+.card img {
+  width: 30%;
+}
+
 /*outrooo*/
-.cardTitle h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 2em;
-  text-align: center;
-  margin: 40px 0;
-}
-
-.cardTitle h2:after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 5px;
-  background-color: #ed2b84;
-  margin: 0 auto;
-  margin-top: 8px;
-}
-
-.containerCards {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.ajuda {
-}
-
-.card-img {
-  height: 190px;
-  margin-bottom: 15px;
-  background-size: cover;
-  border-radius: 15px 15px 0 0;
-}
-
-.card h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.5em;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 10px;
+.card h3 {
+  font-size: 1.25em;
+  font-weight: bolder;
+  margin: 10px 0;
 }
 
 .card p {
+  color: #565656;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.25em;
-  text-align: center;
-  margin-top: 15px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }

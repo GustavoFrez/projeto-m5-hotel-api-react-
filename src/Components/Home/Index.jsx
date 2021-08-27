@@ -5,6 +5,12 @@ import piscina from '../../Assets/img/piscinaHome.png';
 import quarto from '../../Assets/img/quartoHome.png';
 import jardim from '../../Assets/img/jardimHome.png';
 import recepcionista from '../../Assets/img/recepcionista.png';
+import iconeWifi from '../../Assets/img/iconeWifi.png';
+import iconePiscina from '../../Assets/img/iconePiscina.png';
+import iconeCafe from '../../Assets/img/iconeCoffee.png';
+import iconeBar from '../../Assets/img/iconeBar.png';
+import iconeTv from '../../Assets/img/iconeTv.png';
+import iconeJanta from '../../Assets/img/iconeJanta.png';
 
 const Home = () => {
   return (
@@ -51,10 +57,10 @@ const Home = () => {
         </div>
       </section>
 
-      <section className={Styles.containerFlexGaleria}>
-        <div className={Styles.containerGaleria}>
+      <section className={Styles.containerFlexServicos}>
+        <div className={Styles.containerServicos}>
           <div className={Styles.card}>
-            <img src="" alt="" />
+            <img src={iconeWifi} alt="Wifi" />
             <h3>Free Wi-Fi</h3>
             <p>
               The massive investment in a hotel or resort requires constant
@@ -63,7 +69,7 @@ const Home = () => {
           </div>
 
           <div className={Styles.card}>
-            <img src="" alt="" />
+            <img src={iconePiscina} alt="Piscina" />
             <h3>Premium Pool</h3>
             <p>
               The massive investment in a hotel or resort requires constant
@@ -72,7 +78,7 @@ const Home = () => {
           </div>
 
           <div className={Styles.card}>
-            <img src="" alt="" />
+            <img src={iconeCafe} alt="Café" />
             <h3>Coffee Maker</h3>
             <p>
               The massive investment in a hotel or resort requires constant
@@ -81,7 +87,7 @@ const Home = () => {
           </div>
 
           <div className={Styles.card}>
-            <img src="" alt="" />
+            <img src={iconeBar} alt="Bar" />
             <h3>Bar Wine</h3>
             <p>
               The massive investment in a hotel or resort requires constant
@@ -90,7 +96,7 @@ const Home = () => {
           </div>
 
           <div className={Styles.card}>
-            <img src="" alt="" />
+            <img src={iconeTv} alt="TV" />
             <h3>TV HD</h3>
             <p>
               The massive investment in a hotel or resort requires constant
@@ -99,7 +105,7 @@ const Home = () => {
           </div>
 
           <div className={Styles.card}>
-            <img src="" alt="" />
+            <img src={iconeJanta} alt="Restaurante" />
             <h3>Restaurant</h3>
             <p>
               The massive investment in a hotel or resort requires constant

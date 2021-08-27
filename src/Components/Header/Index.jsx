@@ -22,10 +22,6 @@ const Header = () => {
             <li>Quartos</li>
           </Link>
 
-          <Link className={Styles.menuNav} to="/Experiências">
-            <li>Experiências</li>
-          </Link>
-
           <Link className={Styles.menuNav} to="/Contato">
             <li>Contato</li>
           </Link>

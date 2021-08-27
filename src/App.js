@@ -4,6 +4,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './Components/Header/Index.jsx';
 import Home from './Components/Home/Index.jsx';
 import Quarto from './Components/Quartos/Index';
+import Footer from './Components/Footer/Index';
+import LoginFuncionario from './Components/LoginFuncionario/Index';
 
 function App() {
   return (
@@ -17,7 +19,11 @@ function App() {
           <Route exact path="/Quartos">
             <Quarto />
           </Route>
+          <Route exact path="/LoginFuncionario">
+            <LoginFuncionario />
+          </Route>
         </Switch>
+        <Footer />
       </BrowserRouter>
     </div>
   );

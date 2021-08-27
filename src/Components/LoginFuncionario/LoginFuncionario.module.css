@@ -1,0 +1,59 @@
+.backgroundFuncionario {
+  background-image: url('../../Assets/img/backgroundFuncionario.png');
+  background-size: cover;
+  height: 83vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginBox {
+  width: 260px;
+  height: 280px;
+  background: #1a1a1a;
+  box-shadow: 0 5px 10px rgba(78, 78, 78, 0.8);
+  border-radius: 5px;
+  padding: 70px 30px;
+}
+
+.centralizaLogin {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.logoLogin {
+  width: 9%;
+  margin-left: 65px;
+}
+
+.tituloLogin {
+  font-size: 30px;
+  margin-top: -24px;
+  text-align: center;
+}
+
+.loginTitulo {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.inputLogin {
+  width: 220px;
+  height: 30px;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.inputLogin::placeholder {
+  color: #000;
+  font-size: 0.85rem;
+  padding-left: 5px;
+}
