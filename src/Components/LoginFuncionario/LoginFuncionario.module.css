@@ -14,29 +14,28 @@
   width: 260px;
   height: 280px;
   background: #1a1a1a;
-  box-shadow: 0 5px 10px rgba(78, 78, 78, 0.8);
   border-radius: 5px;
   padding: 70px 30px;
-}
-
-.centralizaLogin {
-  margin-top: 18px;
   text-align: center;
 }
 
+.centralizaLogin {
+  text-align: center;
+  margin: 0 auto;
+}
+
 .logoLogin {
-  width: 9%;
-  margin-left: 65px;
+  width: 35%;
+  margin-top: -10px;
+  margin-bottom: 7px;
 }
 
 .tituloLogin {
   font-size: 30px;
-  margin-top: -24px;
   text-align: center;
 }
 
 .loginTitulo {
-  margin-top: 30px;
   margin-bottom: 10px;
   padding: 10px;
   text-transform: uppercase;
@@ -49,7 +48,7 @@
   height: 30px;
   border: none;
   outline: none;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .inputLogin::placeholder {

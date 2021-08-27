@@ -6,6 +6,7 @@ import Home from './Components/Home/Index.jsx';
 import Quarto from './Components/Quartos/Index';
 import Footer from './Components/Footer/Index';
 import LoginFuncionario from './Components/LoginFuncionario/Index';
+import AdminScreen from './Components/AdminScreen/Index';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route exact path="/LoginFuncionario">
             <LoginFuncionario />
+          </Route>
+          <Route exact path="/AdminScreen">
+            <AdminScreen />
           </Route>
         </Switch>
         <Footer />

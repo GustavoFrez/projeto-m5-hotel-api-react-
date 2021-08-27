@@ -9,7 +9,6 @@ const Footer = () => {
     <footer>
       <div>
         <img src={logo} alt="" className={Styles.logoFooter} />
-        <span className={Styles.tituloLogoFooter}>Hotel</span>
       </div>
       <p>Conclusão de Módulo Resilia T5</p>
       <Link to="/LoginFuncionario">

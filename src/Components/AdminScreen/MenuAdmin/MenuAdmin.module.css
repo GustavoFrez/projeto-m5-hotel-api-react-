@@ -1,0 +1,26 @@
+.divBoxMenu {
+  width: 25%;
+  box-shadow: 5px 0px 5px rgba(68, 68, 68, 0.6);
+  z-index: 1;
+}
+
+.ulAdmin {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.liAdmin {
+  width: 180px;
+  padding: 15px 0px;
+  text-align: center;
+  background-color: #ecae31;
+  box-shadow: 3px 3px 4px rgba(68, 68, 68, 0.6);
+}
+
+.linkMenu {
+  text-decoration: none;
+  color: #fff;
+}

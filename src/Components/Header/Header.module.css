@@ -3,10 +3,10 @@ header {
   background-color: #1a1a1a;
 }
 
-nav {
+.navHeader {
   width: 1200px;
   color: #fff;
-  height: 85px;
+  height: 95px;
   display: flex;
   margin: 0 auto;
   text-decoration: none;
@@ -17,27 +17,27 @@ nav {
   color: #fff;
 }
 
-ul {
-  width: 70%;
-  height: 85px;
+.ulHeader {
+  width: 65%;
+  height: 95px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-li {
+.liHeader {
   font-size: 18px;
 }
 
-li:hover {
+.liHeader:hover {
   color: #ecae31;
   cursor: pointer;
   transition: all ease, 0.5s;
 }
 
 .menu {
-  width: 30%;
-  height: 85px;
+  width: 35%;
+  height: 95px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,9 +46,5 @@ li:hover {
 }
 
 .logo {
-  height: 25px;
-}
-
-.tituloLogo {
-  font-size: 25px;
+  height: 65px;
 }

@@ -14,8 +14,6 @@ const LoginFuncionario = () => {
       <div onLoad={handleLoad}>
         <form className={Styles.loginBox}>
           <img className={Styles.logoLogin} src={logo} alt="Logo" />
-          <h1 className={Styles.tituloLogin}>Hotel</h1>
-
           <div className={Styles.centralizaLogin}>
             <h1 className={Styles.loginTitulo}>Login</h1>
             <div className={Styles.boxLogin}>
@@ -26,7 +24,7 @@ const LoginFuncionario = () => {
                 placeholder="E-mail"
                 required
               />
-              <br />
+
               <input
                 className={Styles.inputLogin}
                 type="password"
@@ -36,8 +34,6 @@ const LoginFuncionario = () => {
               />
             </div>
 
-            <br />
-            <br />
             <Button>Login</Button>
           </div>
         </form>

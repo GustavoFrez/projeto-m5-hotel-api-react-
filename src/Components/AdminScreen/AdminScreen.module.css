@@ -1,0 +1,10 @@
+.divContainerPai {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+}
+
+.divBoxAdmin {
+  width: 75%;
+  background-color: #e1e1e1;
+}

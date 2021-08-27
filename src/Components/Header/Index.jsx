@@ -5,25 +5,24 @@ import Styles from './Header.module.css';
 const Header = () => {
   return (
     <header>
-      <nav>
+      <nav className={Styles.navHeader}>
         <Link className={Styles.menu} to="/">
           <div>
             <img src={logo} alt="" className={Styles.logo} />
-            <span className={Styles.tituloLogo}>Hotel</span>
           </div>
         </Link>
 
-        <ul>
+        <ul className={Styles.ulHeader}>
           <Link className={Styles.menuNav} to="/">
-            <li>Home</li>
+            <li className={Styles.liHeader}>Home</li>
           </Link>
 
           <Link className={Styles.menuNav} to="/Quartos">
-            <li>Quartos</li>
+            <li className={Styles.liHeader}>Quartos</li>
           </Link>
 
           <Link className={Styles.menuNav} to="/Contato">
-            <li>Contato</li>
+            <li className={Styles.liHeader}>Contato</li>
           </Link>
         </ul>
       </nav>
