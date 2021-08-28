@@ -9,7 +9,7 @@ const AdminScreen = () => {
       <MenuAdmin />
       <div className={Styles.divBoxAdmin}>
         <Switch>
-          <Route exact path="funcionariosGet">
+          <Route exact path="/AdminScreen/funcionariosGet">
             <p>TESTEEE</p>
           </Route>
         </Switch>

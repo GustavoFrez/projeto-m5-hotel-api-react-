@@ -7,19 +7,19 @@ const MenuAdmin = () => {
     <div className={Styles.divBoxMenu}>
       <nav className={Styles.navAdmin}>
         <ul className={Styles.ulAdmin}>
-          <NavLink className={Styles.linkMenu} to="/Admin/funcionarios">
+          <NavLink className={Styles.linkMenu} to="funcionarios">
             <li className={Styles.liAdmin}>Funcionários</li>
           </NavLink>
 
-          <NavLink className={Styles.linkMenu} to="clientesGet">
+          <NavLink className={Styles.linkMenu} to="clientes">
             <li className={Styles.liAdmin}>Clientes</li>
           </NavLink>
 
-          <NavLink className={Styles.linkMenu} to="quartoGet">
+          <NavLink className={Styles.linkMenu} to="quartos">
             <li className={Styles.liAdmin}>Quartos</li>
           </NavLink>
 
-          <NavLink className={Styles.linkMenu} to="mobiliaGet">
+          <NavLink className={Styles.linkMenu} to="mobilias">
             <li className={Styles.liAdmin}>Mobília</li>
           </NavLink>
         </ul>

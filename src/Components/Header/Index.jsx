@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import logo from '../../Assets/img/logo.png';
 import Styles from './Header.module.css';
 const Header = () => {
+  const auth = false;
   return (
     <header>
       <nav className={Styles.navHeader}>
@@ -24,6 +25,12 @@ const Header = () => {
           <Link className={Styles.menuNav} to="/Contato">
             <li className={Styles.liHeader}>Contato</li>
           </Link>
+
+          {auth ? (
+            <Link className={Styles.menuNav} to="/Admin">
+              <li className={Styles.liHeader}>Admin</li>
+            </Link>
+          ) : null}
         </ul>
       </nav>
     </header>

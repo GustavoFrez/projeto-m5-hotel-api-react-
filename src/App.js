@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/LoginFuncionario">
             <LoginFuncionario />
           </Route>
-          <Route exact path="/AdminScreen">
+          <Route exact path="/AdminScreen*">
             <AdminScreen />
           </Route>
         </Switch>
