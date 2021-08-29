@@ -1,3 +1,8 @@
+.main{
+  opacity: 0;   
+  animation: transicao 0.3s forwards;
+}
+
 .backgroundHome {
   background-image: url('../../Assets/img/backgroundHome.png');
   background-repeat: no-repeat;
@@ -8,6 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 .backgroundHome h2 {
@@ -31,6 +37,8 @@
 .estrela {
   font-size: 46px;
   color: #ecae31;
+  width: 100%;
+  text-align: center;
 }
 
 .sobreNos {
@@ -132,4 +140,22 @@
   font-size: 1.25em;
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+.estrelax{
+  transform: translateX(-100px);
+  animation: estrela 5.5s ;
+}
+
+@keyframes transicao {
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}
+
+@keyframes estrela {
+  to {    
+    transform: initial;
+  }
 }

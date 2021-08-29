@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './Funcionarios.module.css';
+import Styles from './Mobilia.module.css';
 
 const Mobilia = () => {
   return (
