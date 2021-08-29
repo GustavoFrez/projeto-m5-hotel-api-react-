@@ -3,12 +3,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
-  height: 35vh;
+  height: 25vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0;   
+  opacity: 0;
   animation: transicao 0.3s forwards;
 }
 

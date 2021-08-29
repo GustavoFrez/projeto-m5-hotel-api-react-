@@ -1,0 +1,106 @@
+.backgroundContato {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+.backgroundTopo {
+  background-image: url('../../Assets/img/backgroundHome.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.backgroundTopo h2 {
+  color: #fff;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.contato {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 50%;
+  height: 380px;
+  margin: 20px;
+  align-items: center;
+  justify-content: space-around;
+}
+.contato div {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 30%;
+  margin: 20px;
+  align-items: center;
+  justify-content: space-around;
+}
+.contato div h2 {
+  color: #1a1a1a;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.titulo {
+  font-size: 20px;
+}
+.endereco {
+  width: 50%;
+  height: 100%;
+  align-content: center;
+}
+.formContato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background-color: #1a1a1a;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
+.inputContato {
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin: 6px;
+  height: 30px;
+}
+.mensagem {
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding-bottom: 100px;
+  padding-top: 5px;
+  margin: 6px;
+}
+.msgContato {
+  padding: 15px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.erro {
+  font-size: 10px;
+  color: #ffaa00;
+}
+
+@keyframes transicao {
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}
