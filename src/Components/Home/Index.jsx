@@ -14,7 +14,7 @@ import iconeJanta from '../../Assets/img/iconeJanta.png';
 
 const Home = () => {
   return (
-    <main>
+    <main className={Styles.main}>
       <section className={Styles.backgroundHome}>
         <h2>Bem-vindo</h2>
         <h5>O seu hotel 5 estrelas</h5>
