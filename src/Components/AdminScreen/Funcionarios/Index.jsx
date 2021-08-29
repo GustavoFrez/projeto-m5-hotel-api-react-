@@ -4,9 +4,9 @@ import lixeira from '../../../Assets/img/lixeira.png'
 import editar from '../../../Assets/img/ferramenta-lapis.png'
 import loader from '../../../Assets/img/loader.gif'
 import { useState, useEffect } from 'react';
-import Modal from '../../Modal/Modal';
+import Modal from '../../ModalFunc/ModalFunc';
 import ModalConfirm from '../../ModalConfirm/ModalConfirm';
-import ModalUpdate from '../../ModalUpdate/ModalUpdate';
+import ModalUpdate from '../../ModalUpdateFunc/ModalUpdate';
 
 const Funcionarios = () => {
 
@@ -29,7 +29,7 @@ const Funcionarios = () => {
 
 
   const buscaFunc = async ()=>{
-    let request = await fetch('https://api-rest-funcionarios.herokuapp.com/funcionarios')
+    let request = await fetch('https://api-rest-funcionarios.herokuapp.com/funcionarios/')
     let json = await request.json()
     let funcionarios = json.result
     
@@ -100,7 +100,7 @@ const Funcionarios = () => {
   <ModalConfirm
   apiUrl='https://api-rest-funcionarios.herokuapp.com/funcionarios/'
   deleteId={deleteId}
-  buscaFunc={()=>buscaFunc()}
+  busca={()=>buscaFunc()}
   onConfirm={()=>setIsConfirmVisible(false)}
   /> :null}
 
