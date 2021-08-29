@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Styles from "./ModalConfirm.module.css";
 
-const Modal = ({ onConfirm= () => {}, buscaFunc, deleteId, apiUrl }) => {
+const Modal = ({ onConfirm= () => {}, busca, deleteId, apiUrl }) => {
 
 
   const handleClick = (e) =>{
@@ -29,7 +29,7 @@ const Modal = ({ onConfirm= () => {}, buscaFunc, deleteId, apiUrl }) => {
     
     onConfirm()
     setTimeout(() => {
-       buscaFunc()  
+       busca()  
     }, 1000);    
 
   }
