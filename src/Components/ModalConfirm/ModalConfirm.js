@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Styles from "./ModalConfirm.module.css";
 
-const Modal = ({ onConfirm= () => {}, buscaFunc, deleteId }) => {
+const Modal = ({ onConfirm= () => {}, buscaFunc, deleteId, apiUrl }) => {
 
 
   const handleClick = (e) =>{
@@ -23,7 +23,7 @@ const Modal = ({ onConfirm= () => {}, buscaFunc, deleteId }) => {
          };   
    
   
-    let url = 'https://api-rest-funcionarios.herokuapp.com/funcionarios/' + deleteId    
+    let url = apiUrl + deleteId    
 
     let json = await fetch(url, deletar)  
     

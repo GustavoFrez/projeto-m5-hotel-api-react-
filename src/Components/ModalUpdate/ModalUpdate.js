@@ -1,13 +1,32 @@
-import React, { useState } from "react";
-import Styles from "./Modal.module.css";
+import React, { useEffect, useState } from "react";
+import Styles from "./ModalUpdate.module.css";
 
-const Modal = ({ onClose = () => {}, buscaFunc, apiUrl }) => {
+const Modal = ({ onUpdate = () => {}, buscaFunc, updateId, isUpdateVisible }) => {
 
 const [nomeFunc, setNomeFunc] = useState('')
 const [idadeFunc, setIdadeFunc] = useState('')
 const [cpfFunc, setCpfFunc] = useState('')
 const [cargoFunc, setCargoFunc] = useState('')
 const [senhaFunc, setSenhaFunc] = useState('')
+
+useEffect(()=>(
+  buscaFuncById(updateId)
+
+), [isUpdateVisible])
+
+const buscaFuncById = async (id)=>{
+  
+  let url = 'https://api-rest-funcionarios.herokuapp.com/funcionarios/' + id
+  let request = await fetch(url)
+  let json = await request.json()
+  let func = json.result[0]  
+  console.log(func.NOME)
+  setNomeFunc(func.NOME)  
+  setIdadeFunc(func.IDADE)
+  setCpfFunc(func.CPF)
+  setCargoFunc(func.CARGO)
+  setSenhaFunc(func.SENHA)
+}
 
 const handleNome = (e)=>{
     setNomeFunc(e.target.value)   
@@ -30,13 +49,13 @@ const handleSenha = (e)=>{
 }
 
   const handleClick = (e) =>{
-    if(e.target.id == "modal"){
-        onClose()
+    if(e.target.id == "modalUpdate"){
+        onUpdate()
     }
 
   }  
 
-  const cadastrarFunc = async (e, apiUrl)=>{
+  const AtualizaFunc = async (e, id)=>{
 
     e.preventDefault();
 
@@ -48,17 +67,19 @@ const handleSenha = (e)=>{
         senha:senhaFunc
     }
 
-    let post = {        
-        method: "POST",        
+    let put = {        
+        method: "PUT",        
         headers: new Headers({            
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           }),
         body: JSON.stringify(func)  
          };
-   
-    let json = await fetch(apiUrl, post)  
-    onClose()
+    
+    let url = 'https://api-rest-funcionarios.herokuapp.com/funcionarios/' + id
+
+    let json = await fetch(url, put)  
+    onUpdate()
     buscaFunc()
     setTimeout(() => {
        buscaFunc()  
@@ -68,7 +89,7 @@ const handleSenha = (e)=>{
   }
 
   return (
-    <div id="modal" onClick={handleClick} className={Styles.modal}>
+    <div id="modalUpdate" onClick={handleClick} className={Styles.modal}>
       <div className={Styles.container}>
       
         <div className={Styles.content}>          
@@ -76,7 +97,7 @@ const handleSenha = (e)=>{
               <div className={Styles.formularioContato}>
                 <div className={Styles.containerflex}>
                   <form>
-                    <h4 class={Styles.tituloMensagem}>Cadastro Funcionário</h4>
+                    <h4 class={Styles.tituloMensagem}>Atualizar Funcionário</h4>
                     <div>
                       <input
                       onChange={handleNome}
@@ -85,6 +106,7 @@ const handleSenha = (e)=>{
                         name="nome"
                         required=""
                         placeholder="Name"
+                        value={nomeFunc}
                       />
                     </div>
                     <div>
@@ -97,6 +119,7 @@ const handleSenha = (e)=>{
                         placeholder="Idade"
                         max="70"
                         min="0"
+                        value={idadeFunc}
                       />
                     </div>
                     <div>
@@ -107,6 +130,7 @@ const handleSenha = (e)=>{
                         name="CPF"
                         required=""
                         placeholder="CPF"
+                        value={cpfFunc}
                       />
                     </div>
 
@@ -118,6 +142,7 @@ const handleSenha = (e)=>{
                         name="Cargo"
                         required=""
                         placeholder="Cargo"
+                        value={cargoFunc}
                       />
                     </div>
 
@@ -129,16 +154,17 @@ const handleSenha = (e)=>{
                         name="password"
                         required=""
                         placeholder="Senha"
+                        value={senhaFunc}
                       />
                     </div>
                     <div>
                       <input
-                        onClick={(e)=> cadastrarFunc(e, apiUrl)}
+                        onClick={(e)=> AtualizaFunc(e, updateId)}
                         class="enviar"
                         id="enviar"
                         name="enviar"
                         type="submit"
-                        value="Enviar"
+                        value="Atualizar"
                       />
                     </div>
                   </form>
@@ -147,7 +173,7 @@ const handleSenha = (e)=>{
             
               
         </div>
-        <button className={Styles.btnClose} onClick={() => onClose()}>Fechar</button>
+        <button className={Styles.btnClose} onClick={() => onUpdate()}>Fechar</button>
       </div>
     </div>
   );

@@ -6,13 +6,16 @@ import loader from '../../../Assets/img/loader.gif'
 import { useState, useEffect } from 'react';
 import Modal from '../../Modal/Modal';
 import ModalConfirm from '../../ModalConfirm/ModalConfirm';
+import ModalUpdate from '../../ModalUpdate/ModalUpdate';
 
 const Funcionarios = () => {
 
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [isConfirmVisible, setIsConfirmVisible] = useState(false)
-  const [deleteId, setDeleteID] = useState(0)
+  const [isUpdateVisible, setIsUpdateVisible] = useState(false)
 
+  const [deleteId, setDeleteID] = useState(0)
+  const [updateId, setUpdateID] = useState(0)
   const [func, setFunc] = useState([])
 
   useEffect(()=>{ 
@@ -43,6 +46,11 @@ const Funcionarios = () => {
     setIsConfirmVisible(!isConfirmVisible)
   }
 
+  const callUpdate = (e)=>{
+    setUpdateID(e.target.id)
+    setIsUpdateVisible(!isConfirmVisible)
+  }
+
   return (
     <div className={Styles.container}>
       
@@ -69,7 +77,7 @@ const Funcionarios = () => {
     <td>{fun.CPF}</td>
     <td>{fun.CARGO}</td>      
 
-    <td><img className={Styles.img} src={editar} alt=""/> <img className={Styles.img} id={fun.ID} onClick={callConfirm} src={lixeira} alt=""/></td>
+    <td><img className={Styles.img} id={fun.ID} onClick={callUpdate} src={editar} alt="Atualizar"/> <img className={Styles.img} id={fun.ID} onClick={callConfirm} src={lixeira} alt="Deletar"/></td>
 
   </tr>      
 
@@ -82,16 +90,30 @@ const Funcionarios = () => {
 
 
 {isModalVisible ? 
-  <Modal  
+  <Modal
+  apiUrl='https://api-rest-funcionarios.herokuapp.com/funcionarios/'   
   buscaFunc={()=>buscaFunc()}
   onClose={()=> setIsModalVisible(false)}
   /> : null}
+
 {isConfirmVisible ?
   <ModalConfirm
+  apiUrl='https://api-rest-funcionarios.herokuapp.com/funcionarios/'
   deleteId={deleteId}
   buscaFunc={()=>buscaFunc()}
   onConfirm={()=>setIsConfirmVisible(false)}
   /> :null}
+
+  {isUpdateVisible ?
+
+  <ModalUpdate
+  isUpdateVisible={isUpdateVisible}
+  apiUrl='https://api-rest-funcionarios.herokuapp.com/funcionarios/'
+  updateId={updateId}
+  buscaFunc={()=>buscaFunc()}
+  onUpdate={()=>setIsUpdateVisible(false)}
+  /> :null}
+
 
     <button className={Styles.btnModal} onClick={()=> callModal()}>+</button>
     </div>
