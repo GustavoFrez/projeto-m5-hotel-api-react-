@@ -14,7 +14,7 @@
 
 .loginBox {
   width: 260px;
-  height: 280px;
+  height: 330px;
   background: #1a1a1a;
   border-radius: 5px;
   padding: 70px 30px;
@@ -47,10 +47,10 @@
 
 .inputLogin {
   width: 220px;
-  height: 30px;
+  height: 20px;
   border: none;
   outline: none;
-  margin-bottom: 25px;
+  margin-bottom: 12px;
 }
 
 .inputLogin::placeholder {
@@ -62,6 +62,7 @@
 .erro {
   font-size: 10px;
   color: #ffaa00;
+  margin-bottom: 10px;
 }
 
 .boxLogin {
@@ -72,9 +73,30 @@
   align-items: center;
 }
 
+.boxButtonLogin {
+  margin-top: 10px;
+}
+
 @keyframes transicao {
   to {
     opacity: initial;
     transform: initial;
+  }
+}
+
+/*RESPONSIVO LOGIN FUNCIONARIO*/
+
+@media (max-width: 768px) {
+  .loginBox {
+    width: 190px;
+    height: 280px;
+  }
+
+  .inputLogin {
+    width: 175px;
+    height: 18px;
+    border: none;
+    outline: none;
+    margin-bottom: 12px;
   }
 }
