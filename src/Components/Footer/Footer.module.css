@@ -1,7 +1,6 @@
-footer {
+.footerGeral {
   width: 100%;
-  height: 60px;
-  padding: 20px 0px;
+  height: 85px;
   background-color: #1a1a1a;
   color: #fff;
   display: flex;
@@ -10,6 +9,32 @@ footer {
   flex-wrap: wrap;
 }
 
-.logoFooter {
-  height: 60px;
+.footerGeral img {
+  width: 75px;
+}
+
+/*RESPONSIVO FOOTER*/
+
+@media (max-width: 768px) {
+  .footerGeral {
+    height: auto;
+    padding: 30px 0;
+    flex-direction: column;
+  }
+
+  .footerGeral img {
+    width: 15%;
+  }
+
+  .logoFooter {
+    padding: 0;
+  }
+
+  .boxlogoFooter {
+    text-align: center;
+  }
+
+  .pFooter {
+    margin: 25px 0;
+  }
 }
