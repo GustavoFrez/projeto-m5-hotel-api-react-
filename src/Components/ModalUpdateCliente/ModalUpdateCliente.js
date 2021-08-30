@@ -82,7 +82,7 @@ const handleQuarto = (e) => {
   }
 
   return (
-    <div id="modal" onClick={handleClick} className={Styles.modal}>
+    <div id="modalUpdate" onClick={handleClick} className={Styles.modal}>
         <div className={Styles.container}>
 
             <div className={Styles.content}>
