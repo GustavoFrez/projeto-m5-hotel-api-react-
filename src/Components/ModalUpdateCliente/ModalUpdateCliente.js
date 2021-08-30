@@ -19,7 +19,7 @@ const buscaCliById = async (id)=>{
   let request = await fetch(url)
   let json = await request.json()
   let cli = json.result[0]  
-  console.log(cli.nome)
+  console.log(cli.NOME)
   setNomeCli(cli.NOME)  
   setEmailCli(cli.EMAIL)
   setCpfCli(cli.CPF)
@@ -125,7 +125,7 @@ const handleQuarto = (e) => {
                                     value={cpfCli}
                                 />
                             </div>
-
+                            
                             <div>
                                 <input
                                     onChange={handleQuarto}

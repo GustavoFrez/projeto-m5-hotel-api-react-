@@ -1,46 +1,42 @@
 import React, { useState } from "react";
 import Styles from "./ModalConfirm.module.css";
 
-const Modal = ({ onConfirm= () => {}, busca, deleteId, apiUrl }) => {
+const Modal = ({ onConfirm = () => { }, busca, deleteId, apiUrl }) => {
 
-
-  const handleClick = (e) =>{
-    if(e.target.id == "modalConfirm"){
+  const handleClick = (e) => {
+    if (e.target.id == "modalConfirm") {
       onConfirm()
     }
 
-  }  
+  }
 
-  const deletaFunc = async ()=>{   
+  const deletaFunc = async () => {
 
+    let deletar = {
+      method: "DELETE",
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      })
+    };
 
-    let deletar = {        
-        method: "DELETE",        
-        headers: new Headers({            
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          }) 
-         };   
-   
-  
-    let url = apiUrl + deleteId    
+    let url = apiUrl + deleteId
 
-    let json = await fetch(url, deletar)  
-    
+    let json = await fetch(url, deletar)
+
     onConfirm()
     setTimeout(() => {
-       busca()  
-    }, 1000);    
+      busca()
+    }, 1000);
 
   }
 
   return (
     <div id="modalConfirm" onClick={handleClick} className={Styles.modal}>
       <div className={Styles.container}>
-      
-        <div className={Styles.content}>        
-            
-              
+
+        <div className={Styles.content}>
+
         </div>
         <button className={Styles.btnClose} onClick={() => onConfirm()}>Sair</button><button className={Styles.btnClose} onClick={deletaFunc}>Deletar</button>
       </div>
