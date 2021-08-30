@@ -17,8 +17,10 @@ const Home = () => {
     <main className={Styles.main}>
       <section className={Styles.backgroundHome}>
         <h2>Bem-vindo</h2>
-        <h5>O seu hotel 5 estrelas</h5>
-        <h5>a um clique de distância</h5>
+        <h5>
+          O seu hotel 5 estrelas <br></br>a um clique de distância
+        </h5>
+
         <span className={Styles.estrela}>★★★★★</span>
       </section>
       <section className={Styles.sobreNos}>

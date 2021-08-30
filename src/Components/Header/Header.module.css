@@ -1,50 +1,105 @@
 header {
-  width: 100%;
   background-color: #1a1a1a;
+  width: 100%;
 }
 
 .navHeader {
-  width: 1200px;
-  color: #fff;
-  height: 95px;
-  display: flex;
+  background-color: #1a1a1a;
   margin: 0 auto;
-  text-decoration: none;
+  padding: 0 20px;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.menuNav {
-  text-decoration: none;
+.botaoMenu {
+  background-color: transparent;
+  border: none;
   color: #fff;
+  font-size: 36px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: none;
+}
+
+.botaoMenu:hover {
+  background-color: transparent;
+}
+
+.navHeader,
+.ulHeader {
+  display: flex;
 }
 
 .ulHeader {
-  width: 65%;
-  height: 95px;
-  display: flex;
-  justify-content: space-evenly;
+  overflow: hidden;
+  transition: all, 0.8s;
+}
+
+label .logos {
+  width: 25%;
+  padding: 15px 0;
+  justify-content: space-around;
   align-items: center;
 }
 
 .liHeader {
-  font-size: 18px;
+  letter-spacing: 2px;
+  padding: 20px;
 }
 
-.liHeader:hover {
+.linkHeader {
+  text-decoration: none;
+  color: #fff;
+}
+
+.linkHeader:hover {
   color: #ecae31;
   cursor: pointer;
   transition: all ease, 0.5s;
 }
 
-.menu {
-  width: 35%;
-  height: 95px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: #fff;
+button:focus ~ .ulHeader {
+  height: 30vh;
 }
 
-.logo {
-  height: 65px;
+/*RESPONSIVO NAV*/
+
+@media (max-width: 700px) {
+  .navHeader,
+  .ulHeader {
+    flex-direction: column;
+  }
+
+  label .logos {
+    display: block;
+  }
+
+  .ulHeader {
+    text-align: center;
+  }
+
+  .navHeader {
+    align-items: flex-start;
+  }
+
+  .ulHeader,
+  .liHeader {
+    width: 100%;
+    height: 0px;
+  }
+
+  .liHeader {
+    padding-bottom: 50px;
+  }
+
+  label .logos {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .botaoMenu {
+    display: flex;
+  }
 }
