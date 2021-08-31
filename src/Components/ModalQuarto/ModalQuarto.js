@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import Styles from "./Modal.module.css";
 
 const Modal = ({ onClose = () => {}, buscaQuartos, apiUrl }) => {
-  const [numeroQuarto, setNumeroQuarto] = useState("");
-  const [statusQuarto, setStatusQuarto] = useState("");
-  const [tipoQuarto, setTipoQuarto] = useState("");
+  const [numeroQuarto, setNumeroQuarto] = useState(0);
+  const [statusQuarto, setStatusQuarto] = useState(0);
+  const [tipoQuarto, setTipoQuarto] = useState("Standard");
 
   const handleNumero = (e) => {
-    setNumeroQuarto(e.target.value);
+    setNumeroQuarto(parseInt(e.target.value));
   };
 
   const handleStatus = (e) => {    
-    setStatusQuarto(e.target.value);
+    setStatusQuarto(parseInt(e.target.value));
   };
 
   const handleTipo = (e) => {
@@ -28,8 +28,8 @@ const Modal = ({ onClose = () => {}, buscaQuartos, apiUrl }) => {
     e.preventDefault();
 
     let Quarto = {
-      roomNumber: parseInt(numeroQuarto),
-      isOcupied: parseInt(statusQuarto),
+      roomNumber: numeroQuarto,
+      isOcupied: statusQuarto,
       roomType: tipoQuarto     
     };
     console.log(Quarto)
@@ -76,9 +76,10 @@ const Modal = ({ onClose = () => {}, buscaQuartos, apiUrl }) => {
                     type="Status"
                     id="Status"
                     name="Status"
+                    required
                   >
                     <option value="1">Ocupado</option>
-                    <option value="0" selected>
+                    <option value="0">
                       Disponível
                     </option>
                   </select>
@@ -89,11 +90,12 @@ const Modal = ({ onClose = () => {}, buscaQuartos, apiUrl }) => {
                     onChange={handleTipo}                    
                     id="Tipo"
                     name="TipoTipo"
+                    required
                   >
                     <option value="Standard">Standard</option>
                     <option value="Family">Family</option>
                     <option value="Single">Single</option>                   
-                    <option value="Economic" selected>
+                    <option value="Economic">
                     Economic
                     </option>
                   </select>

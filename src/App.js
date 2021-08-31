@@ -8,6 +8,9 @@ import Footer from './Components/Footer/Index';
 import LoginFuncionario from './Components/LoginFuncionario/Index';
 import AdminScreen from './Components/AdminScreen/Index';
 import Contato from './Components/Contato/Index2';
+import RotaPrivada from './Components/RotaPrivada/RotaPrivada'
+import {history} from './history'
+
 
 function App() {
   return (
@@ -27,9 +30,9 @@ function App() {
           <Route exact path="/LoginFuncionario">
             <LoginFuncionario />
           </Route>
-          <Route exact path="/AdminScreen*">
+          <RotaPrivada history={history} exact path="/AdminScreen*">
             <AdminScreen />
-          </Route>
+          </RotaPrivada>
         </Switch>
         <Footer />
       </BrowserRouter>

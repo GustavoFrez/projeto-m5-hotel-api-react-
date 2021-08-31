@@ -27,7 +27,7 @@ const Home = () => {
         <div className={Styles.container}>
           <div className={Styles.textoSobreNos}>
             <h2>Sobre Nós</h2>
-            <h5>Bem-vindo Hiroto Hotel</h5>
+            <h5>Bem-vindo ao Solari Hotel</h5>
             <p>
               Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
               aut fugit, sed quia consequuntur magni dolores eos qui ratione
@@ -45,17 +45,19 @@ const Home = () => {
       </section>
 
       <section className={Styles.galeria}>
-        <div>
-          <img src={piscina} alt="Piscina" />
-        </div>
-        <div>
-          <img src={quarto} alt="Quarto" />
-        </div>
-        <div>
-          <img src={jardim} alt="Jardim" />
-        </div>
-        <div>
-          <img src={recepcionista} alt="Recepcionista" />
+        <div className={Styles.boxGaleria}>
+          <div>
+            <img src={piscina} alt="Piscina" />
+          </div>
+          <div>
+            <img src={quarto} alt="Quarto" />
+          </div>
+          <div>
+            <img src={jardim} alt="Jardim" />
+          </div>
+          <div>
+            <img src={recepcionista} alt="Recepcionista" />
+          </div>
         </div>
       </section>
 
@@ -65,17 +67,17 @@ const Home = () => {
             <img src={iconeWifi} alt="Wifi" />
             <h3>Free Wi-Fi</h3>
             <p>
-              The massive investment in a hotel or resort requires constant
-              reviews and control in order to make it a successful investment.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy
             </p>
           </div>
 
           <div className={Styles.card}>
             <img src={iconePiscina} alt="Piscina" />
-            <h3>Premium Pool</h3>
+            <h3>Piscina Premium</h3>
             <p>
-              The massive investment in a hotel or resort requires constant
-              reviews and control in order to make it a successful investment.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy
             </p>
           </div>
 
@@ -83,17 +85,17 @@ const Home = () => {
             <img src={iconeCafe} alt="Café" />
             <h3>Coffee Maker</h3>
             <p>
-              The massive investment in a hotel or resort requires constant
-              reviews and control in order to make it a successful investment.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy
             </p>
           </div>
 
           <div className={Styles.card}>
             <img src={iconeBar} alt="Bar" />
-            <h3>Bar Wine</h3>
+            <h3>Bar</h3>
             <p>
-              The massive investment in a hotel or resort requires constant
-              reviews and control in order to make it a successful investment.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy
             </p>
           </div>
 
@@ -101,17 +103,17 @@ const Home = () => {
             <img src={iconeTv} alt="TV" />
             <h3>TV HD</h3>
             <p>
-              The massive investment in a hotel or resort requires constant
-              reviews and control in order to make it a successful investment.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy
             </p>
           </div>
 
           <div className={Styles.card}>
             <img src={iconeJanta} alt="Restaurante" />
-            <h3>Restaurant</h3>
+            <h3>Restaurante</h3>
             <p>
-              The massive investment in a hotel or resort requires constant
-              reviews and control in order to make it a successful investment.
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy
             </p>
           </div>
         </div>

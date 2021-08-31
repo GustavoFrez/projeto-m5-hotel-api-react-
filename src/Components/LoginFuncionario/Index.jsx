@@ -54,13 +54,16 @@ const LoginFuncionario = () => {
                     <span className={Styles.erro}>{errors.password}</span>
                   )}
                 </div>
-                <Button
-                  type="submit"
-                  disabled={!isValid}
-                  className={Styles.botao}
-                >
-                  Login
-                </Button>
+                <div className={Styles.boxButtonLogin}>
+                  <Button
+                    c
+                    type="submit"
+                    disabled={!isValid}
+                    className={Styles.botao}
+                  >
+                    Login
+                  </Button>
+                </div>
               </div>
             </Form>
           )}

@@ -92,16 +92,20 @@
 .galeria {
   width: 100%;
   height: auto;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  align-items: center;
   background-color: #ddd;
   padding: 40px 0px;
 }
 
 .galeria img {
   padding: 0 5px;
+  margin: 0 20px;
+}
+
+.boxGaleria {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .containerFlexServicos {
@@ -166,8 +170,12 @@
 /*RESPONSIVO*/
 
 @media (max-width: 1159px) {
-  .backgroundHome h2 {
-    font-size: 2rem;
+  .boxGaleria {
+    max-width: 985px;
+  }
+
+  .galeria img {
+    margin-bottom: 20px;
   }
 }
 
