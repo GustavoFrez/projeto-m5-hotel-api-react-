@@ -1,9 +1,11 @@
 import React from 'react';
 import './Button.module.css';
-const Button = (props) => {
+const Button = ({onClick = () => {}, children}) => {
+
+  
   return (
     <div>
-      <button>{props.children}</button>
+      <button type="submit" onClick={() => onClick()}>{children}</button>
     </div>
   );
 };

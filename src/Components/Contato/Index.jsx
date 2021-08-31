@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Styles from './Contato.module.css';
 import Button from '../Button/Index';
 import { Formik, Field, Form } from 'formik';
 import schema from './schema';
 
 const Contato = () => {
-  function onSubmit(values, actions) {
+
+  const [nome, setNome] = useState('')
+
+  function onClick(values) {
     console.log('SUBMIT', values);
+    console.log("Clicado")
+ 
+  }
+
+  const handleNome = (e) => {
+    console.log(e.target.value)
+    setNome(e.target.value)
   }
 
   return (
@@ -32,16 +42,18 @@ const Contato = () => {
         <div className={Styles.endereco}>
           <Formik
             validationSchema={schema}
-            onSubmit={onSubmit}
+            // onSubmit={onSubmit}
             initialValues={{
               name: '',
               email: '',
               mensagem: '',
             }}
             render={({ values, errors, touched, isValid }) => (
+
               <Form className={Styles.formContato}>
                 <spam className={Styles.msgContato}>
                   Nos envie uma mensagem!
+                  {console.log(isValid)}
                 </spam>
                 <label> Nome: </label>
                 <Field
@@ -49,6 +61,8 @@ const Contato = () => {
                   name="name"
                   placeholder="Digite seu nome"
                   className={Styles.inputContato}
+                  onChange={handleNome}
+                  value={nome}
                 />
                 {errors.name && touched.name && (
                   <span className={Styles.erro}>{errors.name}</span>
@@ -76,7 +90,9 @@ const Contato = () => {
                   <span className={Styles.erro}>{errors.mensagem}</span>
                 )}
                 <br></br>
-                <Button type="submit" disabled={!isValid}>
+
+                <Button disabled={isValid} onClick={(e) => onClick(e)}>
+                  
                   Enviar
                 </Button>
               </Form>
