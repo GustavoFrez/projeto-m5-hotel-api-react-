@@ -23,7 +23,7 @@ const Quartos = () => {
     if(!quartos.length){
       buscaQuartos()
     }   
-
+    
   }, [quartos])
 
   const buscaQuartos = async ()=>{
