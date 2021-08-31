@@ -7,9 +7,10 @@ import Quarto from './Components/Quartos/Index';
 import Footer from './Components/Footer/Index';
 import LoginFuncionario from './Components/LoginFuncionario/Index';
 import AdminScreen from './Components/AdminScreen/Index';
-import Contato from './Components/Contato/Index';
+import Contato from './Components/Contato/Index2';
 import RotaPrivada from './Components/RotaPrivada/RotaPrivada'
 import {history} from './history'
+
 
 function App() {
   return (
