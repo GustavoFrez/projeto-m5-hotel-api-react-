@@ -23,10 +23,16 @@
 
 .gridQuarto {
   display: grid;
-  grid-template-columns: 1% repeat(2, 600px) 1%;
+  grid-template-columns: 1% repeat(2, 500px) 1%;
   grid-template-rows: repeat(4, 1fr);
   gap: 30px;
   margin-top: 60px;
+}
+
+.gridQuarto img {
+  display: flex;
+  justify-content: center;
+  width: 95%;
 }
 
 .imgQuartoUm {
@@ -82,9 +88,13 @@
 }
 
 .centralizar {
-  width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
   margin-bottom: 60px;
+}
+
+.centralizar div {
+  width: 80%;
 }
 
 .tituloQuarto {
@@ -113,5 +123,85 @@
   to {
     opacity: initial;
     transform: initial;
+  }
+}
+
+/*Responsivo Quartos*/
+
+@media (max-width: 1103px) {
+  .gridQuarto {
+    display: grid;
+    grid-template-columns: 5% repeat(2, 400px) 5%;
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .gridQuarto img {
+    width: 80%;
+  }
+
+  .tituloQuarto {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  .espacamentoLinhas p {
+    margin: 8px 0px;
+  }
+}
+
+@media (max-width: 820px) {
+  .gridQuarto {
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    grid-template-rows: repeat(8, 1fr);
+    gap: 30px;
+  }
+
+  .espacamentoLinhas p {
+    width: 280px;
+  }
+
+  .imgQuartoUm {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .textoQuartoUm {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: -30px;
+  }
+
+  .imgQuartoDois {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  .textoQuartoDois {
+    grid-column: 2;
+    grid-row: 4;
+    margin-top: -30px;
+  }
+
+  .imgQuartoTres {
+    grid-column: 2;
+    grid-row: 5;
+  }
+
+  .textoQuartoTres {
+    grid-column: 2;
+    grid-row: 6;
+    margin-top: -30px;
+  }
+
+  .imgQuartoQuatro {
+    grid-column: 2;
+    grid-row: 7;
+  }
+
+  .textoQuartoQuatro {
+    grid-column: 2;
+    grid-row: 8;
+    margin-top: -30px;
   }
 }

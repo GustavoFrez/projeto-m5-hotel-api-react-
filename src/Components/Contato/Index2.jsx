@@ -73,7 +73,7 @@ const Contato2 = () => {
             } else if (
               !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
             ) {
-              errors.email = 'Email invalido';
+              errors.email = 'Email inválido';
             }
             return errors;
           }}
@@ -120,8 +120,8 @@ const Contato2 = () => {
               />
               {errors.email && touched.email && errors.email}
 
-              <input
-                className={Styles.inputContato}
+              <textarea
+                className={Styles.textAreaContato}
                 type="text"
                 name="mensagem"
                 onChange={handleChange}

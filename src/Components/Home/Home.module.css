@@ -169,12 +169,14 @@
 
 /*RESPONSIVO*/
 
-@media (max-width: 1159px) {
+@media (max-width: 1325px) {
   .boxGaleria {
-    max-width: 985px;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .galeria img {
+    margin-top: 20px;
     margin-bottom: 20px;
   }
 }

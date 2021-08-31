@@ -22,7 +22,7 @@ const Quarto = () => {
             </p>
             <div className={Styles.espacamentoLinhas}>
               <p>Size:30 ft</p>
-              <p>Capacity: Max persion 3</p>
+              <p>Capacity: Max persion 3333333</p>
               <p>Bed: King Beds</p>
               <p>Services: Wifi, Television, Bathroom,..</p>
             </div>
