@@ -70,7 +70,7 @@ const Quartos = () => {
       
     <td>{quarto.Id}</td>
     <td>{quarto.RoomNumber}</td>
-    <td>{quarto.IsOcupied}</td>
+    <td>{quarto.IsOcupied ? 'Ocupado' : 'Disponível'}</td>
     <td>{quarto.RoomType}</td>         
 
     <td><img className={Styles.img} id={quarto.Id} onClick={callUpdate} src={editar} alt="Atualizar"/> <img className={Styles.img} id={quarto.Id} onClick={callConfirm} src={lixeira} alt="Deletar"/></td>
