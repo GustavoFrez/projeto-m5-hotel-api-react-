@@ -10,11 +10,16 @@ import AdminScreen from './Components/AdminScreen/Index';
 import Contato from './Components/Contato/Index';
 import RotaPrivada from './Components/RotaPrivada/RotaPrivada'
 import {history} from './history'
+import React from 'react'
+import { Session } from './SessionProvider';
+
 
 function App() {
+
   return (
     <div>
-      <BrowserRouter>
+      <Session>
+      <BrowserRouter>      
         <Header />
         <Switch>
           <Route exact path="/">
@@ -33,8 +38,9 @@ function App() {
             <AdminScreen />
           </RotaPrivada>
         </Switch>
-        <Footer />
+        <Footer />        
       </BrowserRouter>
+      </Session>
     </div>
   );
 }

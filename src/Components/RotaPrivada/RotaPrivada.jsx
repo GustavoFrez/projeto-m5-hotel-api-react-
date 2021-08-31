@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Redirect, Router } from 'react-router';
+import { Context }  from '../../SessionProvider';
+
 
 const RotaPrivada = (props) => {
+    
+    const {talogado} = useContext(Context)
 
-    let isLogged = false
-
-    localStorage.setItem('talogado', isLogged)    
-
-    return isLogged ? <Router { ...props }/> : <Redirect to="/LoginFuncionario" />
+    return talogado ? <Router { ...props }/> : <Redirect to="/LoginFuncionario" />
 
 }
 

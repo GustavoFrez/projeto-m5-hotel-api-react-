@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../Assets/img/logo.png';
 import Styles from './Header.module.css';
+import { Context } from '../../SessionProvider';
+
 const Header = () => {
+
+  const {talogado, handleLoggout} = useContext(Context)
+
   return (
     <header>
       <nav className={Styles.navHeader}>
         <label>
-          <img src={logo} alt="" className={Styles.logos} />
+          <img src={logo} alt="Logo" className={Styles.logos} />
         </label>
 
         <button className={Styles.botaoMenu}>&#9776;</button>
@@ -24,6 +29,14 @@ const Header = () => {
           <Link className={Styles.linkHeader} to="/Contato">
             <li className={Styles.liHeader}>Contato</li>
           </Link>
+
+         { talogado ? <><Link className={Styles.linkHeader} to="/AdminScreen/">
+            <li className={Styles.liHeader}>Admin</li>
+          </Link> | <Link className={Styles.linkHeader} to="/loginfuncionario" onClick={handleLoggout}>
+            <li className={Styles.liHeader}>Sair</li>
+          </Link> </>          
+          : null}
+
         </ul>
       </nav>
     </header>
