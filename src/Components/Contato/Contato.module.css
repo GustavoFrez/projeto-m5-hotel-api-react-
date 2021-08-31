@@ -1,13 +1,7 @@
 .pai {
-  opacity: 0;
-  animation: transicao 0.3s forwards;
-  height: 80vh;
+  height: 82vh;
 }
-.backgroundContato {
-  display: flex;
-  flex-direction: row;
-  background-color: #fff;
-}
+
 .backgroundTopo {
   background-image: url('../../Assets/img/backgroundHome.png');
   background-repeat: no-repeat;
@@ -15,12 +9,21 @@
   background-position: bottom;
   height: 25vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 0;
   animation: transicao 0.3s forwards;
 }
+
+.backgroundContato {
+  width: 100%;
+  height: 68%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .backgroundTopo h2 {
   color: #fff;
   font-size: 3rem;
@@ -29,77 +32,75 @@
   font-weight: bold;
   margin-bottom: 20px;
 }
+
+.boxContato {
+  display: flex;
+  background-color: #fff;
+  width: 100%;
+}
+
+.caixaContato {
+  padding: 20px 0;
+  margin: 0 15px;
+}
+
+.divisaoBoxContato {
+  padding: 20px;
+}
+
 .contato {
-  display: flex;
-  flex-direction: column;
-  height: auto;
+  max-width: 600px;
   width: 50%;
-  height: 380px;
-  margin: 20px;
-  align-items: center;
-  justify-content: space-around;
-}
-.contato div {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  height: 30%;
-  margin: 20px;
-  align-items: center;
   justify-content: space-around;
 }
-.contato div h2 {
+
+.tituloContato {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.textoContato {
+  margin-top: 8px;
+}
+
+.endereco {
+  max-width: 600px;
+  width: 50%;
+}
+
+/*Formulário Contato*/
+
+.formContato {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-right: 15px;
+}
+
+.formContato input {
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: none;
+  outline: none;
+}
+
+.tituloFormulario {
   color: #1a1a1a;
   text-transform: uppercase;
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-.titulo {
   font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 15px;
 }
-.endereco {
-  width: 50%;
-  height: 100%;
-  align-content: center;
+
+.botaoContato {
+  margin-top: 15px;
 }
-.formContato {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  background-color: #1a1a1a;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: bold;
-  color: #fff;
-}
-.inputContato {
-  width: 300px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  margin: 6px;
-  height: 30px;
-}
-.mensagem {
-  width: 300px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  padding-bottom: 100px;
-  padding-top: 5px;
-  margin: 6px;
-}
-.msgContato {
-  padding: 15px;
-  color: #fff;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 20px;
-  font-size: 20px;
-}
+
 .erro {
   font-size: 10px;
   color: #ffaa00;
@@ -109,5 +110,33 @@
   to {
     opacity: initial;
     transform: initial;
+  }
+}
+
+/*RESPONSIVO CONTATO*/
+
+@media (max-width: 750px) {
+  .pai {
+    height: 850px;
+  }
+
+  .backgroundContato {
+    flex-direction: row;
+    margin-top: 30px;
+  }
+
+  .formContato {
+    margin: 0;
+  }
+
+  .formContato input {
+    width: 280px;
+  }
+
+  .contato {
+    margin-bottom: 15px;
+    order: 1;
+    text-align: center;
+    width: 100%;
   }
 }
