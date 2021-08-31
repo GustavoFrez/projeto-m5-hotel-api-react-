@@ -18,7 +18,8 @@ function Session({ children }) {
     const handleLoginFuncionario = (Nomefuncionario)=>{
         localStorage.setItem('talogado', true)
         localStorage.setItem('nomeFunc', Nomefuncionario)
-        setSession({funcionario: Nomefuncionario})       
+        setSession({funcionario: Nomefuncionario})
+        window.location.reload();       
     }
 
     return (
