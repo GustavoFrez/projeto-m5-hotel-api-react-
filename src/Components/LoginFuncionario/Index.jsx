@@ -31,8 +31,8 @@ const LoginFuncionario = () => {
           validationSchema={schema}
           onSubmit={onSubmit}
           initialValues={{
-            name: '',
-            email: '',
+            cpf: '',
+            senha: '',
           }}
           render={({ values, errors, touched, isValid }) => (
             <Form className={Styles.loginBox}>
@@ -42,14 +42,14 @@ const LoginFuncionario = () => {
                 <div className={Styles.boxLogin}>
                   <Field
                     className={Styles.inputLogin}
-                    type="email"
-                    name="email"
-                    placeholder="E-mail"
+                    type="text"
+                    name="Cpf"
+                    placeholder="Cpf"
                     required
                   />
 
-                  {errors.email && touched.email && (
-                    <span className={Styles.erro}>{errors.email}</span>
+                  {errors.cpf && touched.cpf && (
+                    <span className={Styles.erro}>{errors.cpf}</span>
                   )}
 
                   <Field
@@ -59,8 +59,8 @@ const LoginFuncionario = () => {
                     placeholder="Senha"
                     required
                   />
-                  {errors.password && touched.password && (
-                    <span className={Styles.erro}>{errors.password}</span>
+                  {errors.senha && touched.senha && (
+                    <span className={Styles.erro}>{errors.senha}</span>
                   )}
                 </div>
                 <div className={Styles.boxButtonLogin}>

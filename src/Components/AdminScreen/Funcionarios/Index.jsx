@@ -124,7 +124,6 @@ const Funcionarios = () => {
           onUpdate={() => setIsUpdateVisible(false)}
         />
       ) : null}
-
       <button className={Styles.btnModal} onClick={() => callModal()}>
         +
       </button>

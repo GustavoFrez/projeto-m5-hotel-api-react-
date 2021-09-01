@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { Redirect, Router } from 'react-router';
 import { Context }  from '../../SessionProvider';
 
-
 const RotaPrivada = (props) => {
     
     const {talogado} = useContext(Context)
