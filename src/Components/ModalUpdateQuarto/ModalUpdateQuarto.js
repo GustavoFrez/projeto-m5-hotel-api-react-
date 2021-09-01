@@ -51,9 +51,9 @@ const handleTipo = (e) => {
     e.preventDefault();
 
     let Quarto = {
-        RoomNumber:numeroQuarto,
-        isOcupied:statusQuarto,
-        RoomType:tipoQuarto,
+        roomNumber:numeroQuarto,
+        isOcupied:statusQuarto ? 1 : 0,
+        roomType:tipoQuarto,
         
     }
 
@@ -67,7 +67,7 @@ const handleTipo = (e) => {
          };
     
     let url = 'https://hotelresilia.herokuapp.com/room/update/' + id
-
+    console.log(Quarto)
     let json = await fetch(url, put)  
     onUpdate()
     setTimeout(() => {
@@ -104,6 +104,7 @@ const handleTipo = (e) => {
                     type="Status"
                     id="Status"
                     name="Status"
+                    value={statusQuarto}
                   >
                     <option value="1">Ocupado</option>
                     <option value="0" selected>
@@ -117,6 +118,7 @@ const handleTipo = (e) => {
                     onChange={handleTipo}                    
                     id="Tipo"
                     name="TipoTipo"
+                    value={tipoQuarto}
                   >
                     <option value="Standard">Standard</option>
                     <option value="Family">Family</option>
@@ -124,6 +126,7 @@ const handleTipo = (e) => {
                     <option value="Economic" selected>
                     Economic
                     </option>
+
                   </select>
                 
                 </div>
