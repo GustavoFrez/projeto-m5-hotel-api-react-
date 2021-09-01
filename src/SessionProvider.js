@@ -1,5 +1,4 @@
 import React, {createContext, useState} from 'react';
-import { Redirect } from 'react-router-dom';
 import {islogged} from './auth';
 
 const Context = createContext();

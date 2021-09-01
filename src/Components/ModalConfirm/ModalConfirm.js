@@ -10,6 +10,7 @@ const Modal = ({ onConfirm = () => { }, busca, deleteId, apiUrl }) => {
 
   }
 
+
   const deletaFunc = async () => {
 
     let deletar = {
@@ -28,7 +29,7 @@ const Modal = ({ onConfirm = () => { }, busca, deleteId, apiUrl }) => {
     setTimeout(() => {
       busca()
     }, 1000);
-
+    
   }
 
   return (
