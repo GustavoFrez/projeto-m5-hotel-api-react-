@@ -1,5 +1,6 @@
 import React, {createContext, useState} from 'react';
 import {islogged} from './auth';
+import { history } from './history';
 
 const Context = createContext();
 
@@ -9,16 +10,17 @@ function Session({ children }) {
 
     const [session, setSession] = useState({funcionario: ''})    
 
-    const handleLoggout = ()=>{
+    const handleLoggout = (Nomefuncionario)=>{
         localStorage.setItem('talogado', false)
-        window.location.reload();          
+        localStorage.setItem('nomeFunc', Nomefuncionario)
+        setSession({funcionario: Nomefuncionario})       
     }
 
     const handleLoginFuncionario = (Nomefuncionario)=>{
         localStorage.setItem('talogado', true)
         localStorage.setItem('nomeFunc', Nomefuncionario)
         setSession({funcionario: Nomefuncionario})
-        window.location.reload();       
+            
     }
 
     return (
