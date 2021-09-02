@@ -5,12 +5,13 @@ import Styles from './LoginFuncionario.module.css';
 import { Formik } from 'formik';
 import { Context } from '../../SessionProvider';
 import { Redirect } from 'react-router-dom';
-
+import loaderlogin from '../../Assets/img/loaderlogin.gif';
 const LoginFuncionario = () => {
 
     const [cpf, setCpf] = useState('')
     const [senha, setSenha] = useState('')
     const [apiResponse, setApiResponse] = useState('')
+    const [imgLoader, setImgLoader] = useState(false)
     const [showError, setShowError] = useState(false)
 
     const { talogado } = useContext(Context)
@@ -34,14 +35,18 @@ const LoginFuncionario = () => {
         setSenha(e.target.value);
     };
 
-    const entrou = (objeto) => {
+    const entrou = (objeto) => {       
+
         if(objeto.ID){
+            setImgLoader(false)
             handleLoginFuncionario()
         }else if (objeto.message == "CPF não encontrado"){
+            setImgLoader(false)
             setApiResponse("CPF não encontrado")
             setShowError(true)
             setTimeout(() => {setShowError(false)}, 5000)
         } else if (objeto.message == "Senha inválida"){
+            setImgLoader(false)
             setApiResponse("Senha inválida")
             setShowError(true)
             setTimeout(() => {setShowError(false)}, 5000)
@@ -49,6 +54,9 @@ const LoginFuncionario = () => {
     }
 
     const verificaLogin = async (object) => {
+      
+        setImgLoader(true)
+        
         const { cpf, senha } = object;
         const Cpf = {
             cpf: cpf,
@@ -66,9 +74,9 @@ const LoginFuncionario = () => {
         const json = await fetch(url, post);
         const funcionario = await json.json()
 
+       
         entrou(funcionario)
-
-        console.log(funcionario, Cpf);
+       
     };
 
     if (talogado) {
@@ -149,7 +157,7 @@ const LoginFuncionario = () => {
                                         </button>
 
                                         {showError ? <p className={Styles.error}>{apiResponse}</p> : null}
-
+                                        {imgLoader ? <img className={Styles.loader} src={loaderlogin} /> : null}
                                     </div>
                                 </div>
                             </div>

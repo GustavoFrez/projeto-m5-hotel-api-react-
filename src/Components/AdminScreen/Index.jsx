@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Styles from './AdminScreen.module.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import MenuAdmin from './MenuAdmin/Index';
 import Funcionarios from './Funcionarios/Index';
 import Clientes from './Clientes/Index'
@@ -8,6 +8,16 @@ import Quartos from './Quartos/Index'
 import Mobilia from './Mobilia/Index'
 
 const AdminScreen = () => {
+
+  const history = useHistory()
+
+  const {talogado} = useContext
+
+  if(!talogado){
+     history.replace('/LoginFuncionario/')  
+    }
+
+
   return (
     <div className={Styles.divContainerPai}>
       <MenuAdmin />

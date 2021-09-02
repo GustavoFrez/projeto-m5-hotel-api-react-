@@ -16,13 +16,13 @@ const Quarto = () => {
         <section className={Styles.gridQuarto}>
           <img src={quarto1} alt="Premium" className={Styles.imgQuartoUm} />
           <div className={Styles.textoQuartoUm}>
-            <h5 className={Styles.tituloQuarto}>Premium King Room</h5>
+            <h5 className={Styles.tituloQuarto}>Standard</h5>
             <p className={Styles.textoPreco}>
               R$ <span className={Styles.valorPreco}>99</span>/diária
             </p>
             <div className={Styles.espacamentoLinhas}>
               <p>Size:30 ft</p>
-              <p>Capacity: Max persion 3333333</p>
+              <p>Capacity: Max persion 14</p>
               <p>Bed: King Beds</p>
               <p>Services: Wifi, Television, Bathroom,..</p>
             </div>
@@ -30,7 +30,7 @@ const Quarto = () => {
 
           <img src={quarto3} alt="" className={Styles.imgQuartoDois} />
           <div className={Styles.textoQuartoDois}>
-            <h5 className={Styles.tituloQuarto}>Premium King Room</h5>
+            <h5 className={Styles.tituloQuarto}>Single</h5>
             <p className={Styles.textoPreco}>
               R$ <span className={Styles.valorPreco}>99</span>/diária
             </p>
@@ -44,7 +44,7 @@ const Quarto = () => {
 
           <img src={quarto1} alt="" className={Styles.imgQuartoTres} />
           <div className={Styles.textoQuartoTres}>
-            <h5 className={Styles.tituloQuarto}>Premium King Room</h5>
+            <h5 className={Styles.tituloQuarto}>Lux</h5>
             <p className={Styles.textoPreco}>
               R$ <span className={Styles.valorPreco}>99</span>/diária
             </p>
@@ -58,7 +58,7 @@ const Quarto = () => {
 
           <img src={quarto3} alt="" className={Styles.imgQuartoQuatro} />
           <div className={Styles.textoQuartoQuatro}>
-            <h5 className={Styles.tituloQuarto}>Premium King Room</h5>
+            <h5 className={Styles.tituloQuarto}>Family</h5>
             <p className={Styles.textoPreco}>
               R$ <span className={Styles.valorPreco}>99</span>/diária
             </p>

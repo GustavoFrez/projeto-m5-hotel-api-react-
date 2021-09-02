@@ -13,8 +13,6 @@ import {history} from './history'
 import React from 'react'
 import { Session } from './SessionProvider';
 
-
-
 function App() {
 
   return (
@@ -36,7 +34,7 @@ function App() {
             <LoginFuncionario />
           </Route>
           <RotaPrivada history={history} exact path="/AdminScreen*">
-            <AdminScreen />
+            <AdminScreen /> 
           </RotaPrivada>
         </Switch>
         <Footer />        

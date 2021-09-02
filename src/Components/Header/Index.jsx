@@ -33,14 +33,14 @@ const Header = () => {
             <>
               <Link className={Styles.linkHeader} to="/AdminScreen/">
                 <li className={Styles.liHeader}>Admin</li>
-              </Link>{' '}
+              </Link>
               <Link
                 className={Styles.linkHeader}
-                to="/loginfuncionario"
+                
                 onClick={handleLoggout}
               >
                 <li className={Styles.liHeader}>Sair</li>
-              </Link>{' '}
+              </Link>
             </>
           ) : null}
         </ul>

@@ -12,6 +12,12 @@
   animation: transicao 0.3s forwards;
 }
 
+.loader{
+  width: 50px;
+  display: block;
+  margin: 0px auto;
+}
+
 .error{
   margin-top: 15px;
   color: #ffaa00;
