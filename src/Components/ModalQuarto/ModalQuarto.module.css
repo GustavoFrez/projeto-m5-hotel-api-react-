@@ -58,21 +58,6 @@ input[type='number'] {
   font-weight: 600;
 }
 
-.btnEnviar {
-  background-color: #393939;
-  border: none;
-  color: #fff;
-  text-align: center;
-  width: 160px;
-  padding: 9px 0;
-  font-size: 20px;
-  margin-top: 35px;
-}
-
-.btnEnviar:hover {
-  background-color: #767676;
-}
-
 .centralizarBtn {
   max-width: 100%;
   text-align: center;
@@ -85,19 +70,20 @@ input {
   outline: none;
 }
 
-.enviar {
-  border: none;
-  color: #fff;
-  text-align: center;
-  width: 160px;
-  padding: 9px 0;
-  font-size: 20px;
+@keyframes transicao {
+  to {
+    opacity: initial;
+    transform: initial;
+  }
 }
 
-select {
+.select {
   margin: 10px;
   padding: 10px;
-  width: 50%;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #91919f;
+  border-radius: 2px;
 }
 
 @keyframes transicao {

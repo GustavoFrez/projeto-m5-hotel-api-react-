@@ -1,81 +1,73 @@
-import React, { useEffect, useState } from "react";
-import Styles from "./ModalUpdate.module.css";
+import React, { useEffect, useState } from 'react';
+import Styles from './ModalUpdate.module.css';
 
-const Modal = ({ onUpdate = () => {}, buscaQuartos, updateId, isUpdateVisible }) => {
+const Modal = ({
+  onUpdate = () => {},
+  buscaQuartos,
+  updateId,
+  isUpdateVisible,
+}) => {
+  const [numeroQuarto, setNumeroQuarto] = useState('');
+  const [statusQuarto, setStatusQuarto] = useState('');
+  const [tipoQuarto, setTipoQuarto] = useState('');
 
-    const [numeroQuarto, setNumeroQuarto] = useState("");
-    const [statusQuarto, setStatusQuarto] = useState("");
-    const [tipoQuarto, setTipoQuarto] = useState("");
-  
+  useEffect(() => buscaQuartosById(updateId), [isUpdateVisible]);
 
-useEffect(()=>(
-    buscaQuartosById(updateId)
+  const buscaQuartosById = async (id) => {
+    let url = 'https://hotelresilia.herokuapp.com/room/' + id;
+    let request = await fetch(url);
+    let json = await request.json();
+    let Quarto = json.result[0];
+    console.log(Quarto.RoomNumber);
+    setNumeroQuarto(Quarto.RoomNumber);
+    setStatusQuarto(Quarto.isOcupied);
+    setTipoQuarto(Quarto.RoomType);
+  };
 
-), [isUpdateVisible])
+  const handleNumero = (e) => {
+    setNumeroQuarto(e.target.value);
+  };
 
-const buscaQuartosById = async (id)=>{
-  
-  let url = 'https://hotelresilia.herokuapp.com/room/' + id
-  let request = await fetch(url)
-  let json = await request.json()
-  let Quarto = json.result[0]  
-  console.log(Quarto.RoomNumber)
-  setNumeroQuarto(Quarto.RoomNumber)  
-  setStatusQuarto(Quarto.isOcupied)
-  setTipoQuarto(Quarto.RoomType)
-  
-}
+  const handleStatus = (e) => {
+    setStatusQuarto(e.target.value);
+  };
 
-const handleNumero = (e) => {
-    setNumeroQuarto(e.target.value)
-}
+  const handleTipo = (e) => {
+    setTipoQuarto(e.target.value);
+  };
 
-const handleStatus = (e) => {
-    setStatusQuarto(e.target.value)
-}
-
-const handleTipo = (e) => {
-    setTipoQuarto(e.target.value)
-}
-
-
-  const handleClick = (e) =>{
-    if(e.target.id == "modalUpdate"){
-        onUpdate()
+  const handleClick = (e) => {
+    if (e.target.id == 'modalUpdate') {
+      onUpdate();
     }
+  };
 
-  }  
-
-  const AtualizaQuarto = async (e, id)=>{
-
+  const AtualizaQuarto = async (e, id) => {
     e.preventDefault();
 
     let Quarto = {
-        roomNumber:numeroQuarto,
-        isOcupied:statusQuarto ? 1 : 0,
-        roomType:tipoQuarto,
-        
-    }
+      roomNumber: numeroQuarto,
+      isOcupied: statusQuarto ? 1 : 0,
+      roomType: tipoQuarto,
+    };
 
-    let put = {        
-        method: "PUT",        
-        headers: new Headers({            
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          }),
-        body: JSON.stringify(Quarto)  
-         };
-    
-    let url = 'https://hotelresilia.herokuapp.com/room/update/' + id
-    console.log(Quarto)
-    let json = await fetch(url, put)  
-    onUpdate()
+    let put = {
+      method: 'PUT',
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      }),
+      body: JSON.stringify(Quarto),
+    };
+
+    let url = 'https://hotelresilia.herokuapp.com/room/update/' + id;
+    console.log(Quarto);
+    let json = await fetch(url, put);
+    onUpdate();
     setTimeout(() => {
-        buscaQuartos()  
+      buscaQuartos();
     }, 1000);
-    
-
-  }
+  };
 
   return (
     <div id="modalUpdate" onClick={handleClick} className={Styles.modal}>
@@ -84,7 +76,7 @@ const handleTipo = (e) => {
           <div className={Styles.formularioContato}>
             <div className={Styles.containerflex}>
               <form>
-                <h4 class={Styles.tituloMensagem}>Cadastrar Quarto</h4>
+                <h4 class={Styles.tituloMensagem}>Atualizar Quarto</h4>
 
                 <div>
                   <input
@@ -101,6 +93,7 @@ const handleTipo = (e) => {
                 <div>
                   <select
                     onChange={handleStatus}
+                    className={Styles.select}
                     type="Status"
                     id="Status"
                     name="Status"
@@ -114,21 +107,20 @@ const handleTipo = (e) => {
                 </div>
 
                 <div>
-                <select
-                    onChange={handleTipo}                    
+                  <select
+                    onChange={handleTipo}
+                    className={Styles.select}
                     id="Tipo"
                     name="TipoTipo"
                     value={tipoQuarto}
                   >
                     <option value="Standard">Standard</option>
                     <option value="Family">Family</option>
-                    <option value="Single">Single</option>                   
+                    <option value="Single">Single</option>
                     <option value="Economic" selected>
-                    Economic
+                      Economic
                     </option>
-
                   </select>
-                
                 </div>
 
                 <div>

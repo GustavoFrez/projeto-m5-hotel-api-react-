@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Styles from './Modal.module.css';
+import Styles from './ModalQuarto.module.css';
 
 const Modal = ({ onClose = () => {}, buscaQuartos, apiUrl }) => {
   const [numeroQuarto, setNumeroQuarto] = useState(0);
@@ -72,6 +72,7 @@ const Modal = ({ onClose = () => {}, buscaQuartos, apiUrl }) => {
 
                 <div>
                   <select
+                    className={Styles.select}
                     onChange={handleStatus}
                     type="Status"
                     id="Status"
@@ -85,6 +86,7 @@ const Modal = ({ onClose = () => {}, buscaQuartos, apiUrl }) => {
 
                 <div>
                   <select
+                    className={Styles.select}
                     onChange={handleTipo}
                     id="Tipo"
                     name="TipoTipo"
@@ -99,8 +101,8 @@ const Modal = ({ onClose = () => {}, buscaQuartos, apiUrl }) => {
 
                 <div className={Styles.centralizarBtn}>
                   <input
-                    onClick={(e) => cadastrarQuarto(e, apiUrl)}
                     className={Styles.btnEnviar}
+                    onClick={(e) => cadastrarQuarto(e, apiUrl)}
                     class="enviar"
                     id="enviar"
                     name="enviar"

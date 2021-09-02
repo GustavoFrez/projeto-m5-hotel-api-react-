@@ -16,8 +16,9 @@
 .container {
   display: flex;
   flex-direction: column;
-  background-color: seashell;
+  background-color: #fff;
   min-width: 500px;
+  padding: 20px 20px;
 }
 
 .btnClose {
@@ -27,6 +28,7 @@
   line-height: 30px;
   padding: 0 15px;
   align-self: center;
+  margin-bottom: 25px;
 }
 
 .containerflex {
@@ -56,6 +58,20 @@ input {
   width: 500px;
   margin: 10px;
   padding: 10px;
+}
+
+.select {
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #91919f;
+  border-radius: 2px;
+}
+
+.centralizarBtn {
+  max-width: 100%;
+  text-align: center;
 }
 
 .enviar {
