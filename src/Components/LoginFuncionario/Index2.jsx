@@ -56,6 +56,7 @@ const LoginFuncionario = () => {
     const verificaLogin = async (object) => {
       
         setImgLoader(true)
+        
         const { cpf, senha } = object;
         const Cpf = {
             cpf: cpf,
