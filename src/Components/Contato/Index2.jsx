@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import Styles from './Contato.module.css';
-import { Formik } from 'formik';
+import React, { useState } from "react";
+import Styles from "./Contato.module.css";
+import { Formik } from "formik";
+import { ObjectSchema } from "yup";
 
 const Contato2 = () => {
-  const [nome, setNome] = useState('');
+  const [nome, setNome] = useState("");
+  const [isSended, setIsSended] = useState("");
 
   const onClick = () => {
-    console.log('SUBMIT');
-    console.log('Clicado');
+    console.log("SUBMIT");
+    console.log("Clicado");
   };
 
   const handleNome = (e) => {
@@ -25,15 +27,15 @@ const Contato2 = () => {
     };
 
     let post = {
-      method: 'POST',
+      method: "POST",
       headers: new Headers({
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
+        "Content-Type": "application/json",
+        Accept: "application/json",
       }),
       body: JSON.stringify(Email),
     };
 
-    let url = 'https://resiliamailservice.herokuapp.com/sendmail';
+    let url = "https://resiliamailservice.herokuapp.com/sendmail";
 
     const json = await fetch(url, post);
 
@@ -64,16 +66,16 @@ const Contato2 = () => {
         </div>
 
         <Formik
-          initialValues={{ nome: '', email: '', mensagem: '' }}
+          initialValues={{ nome: "", email: "", mensagem: "" }}
           validate={(values) => {
             values.nome = nome;
             const errors = {};
             if (!values.nome) {
-              errors.nome = 'Required';
+              errors.nome = "Required";
             } else if (
               !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
             ) {
-              errors.email = 'Email inválido';
+              errors.email = "Email inválido";
             }
             return errors;
           }}
@@ -81,8 +83,17 @@ const Contato2 = () => {
             setTimeout(() => {
               console.log(JSON.stringify(values, null, 2));
               enviaEmail(values);
+              values.nome = "";
+              setNome("");
+              values.email = "";
+              values.mensagem = "";
               setSubmitting(false);
+              setIsSended(true);
             }, 400);
+
+            setTimeout(() => {
+              setIsSended(false);
+            }, 5000);
           }}
         >
           {({
@@ -139,6 +150,14 @@ const Contato2 = () => {
               >
                 Enviar
               </button>
+              <br />
+              <br />
+
+              { isSended ?
+                <h5 className={Styles.tituloSended}>
+                  <h3>SEU EMAIL FOI ENVIADO COM SUCESSO!</h3>
+                </h5> : null
+              }
             </form>
           )}
         </Formik>

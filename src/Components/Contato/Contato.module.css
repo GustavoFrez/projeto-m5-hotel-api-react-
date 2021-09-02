@@ -101,6 +101,19 @@ textarea {
   font-size: 20px;
   font-weight: 800;
   margin-bottom: 15px;
+  
+  
+}
+
+.tituloSended {
+  color: #1a1a1a;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  opacity: 0;
+  animation: transicao 0.3s forwards;
+  
 }
 
 .botaoContato {
