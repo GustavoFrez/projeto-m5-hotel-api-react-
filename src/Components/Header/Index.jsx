@@ -5,8 +5,7 @@ import Styles from './Header.module.css';
 import { Context } from '../../SessionProvider';
 
 const Header = () => {
-
-  const {talogado, handleLoggout} = useContext(Context)
+  const { talogado, handleLoggout } = useContext(Context);
 
   return (
     <header>
@@ -30,13 +29,20 @@ const Header = () => {
             <li className={Styles.liHeader}>Contato</li>
           </Link>
 
-         { talogado ? <><Link className={Styles.linkHeader} to="/AdminScreen/">
-            <li className={Styles.liHeader}>Admin</li>
-          </Link> | <Link className={Styles.linkHeader} to="/loginfuncionario" onClick={handleLoggout}>
-            <li className={Styles.liHeader}>Sair</li>
-          </Link> </>          
-          : null}
-
+          {talogado ? (
+            <>
+              <Link className={Styles.linkHeader} to="/AdminScreen/">
+                <li className={Styles.liHeader}>Admin</li>
+              </Link>{' '}
+              <Link
+                className={Styles.linkHeader}
+                to="/loginfuncionario"
+                onClick={handleLoggout}
+              >
+                <li className={Styles.liHeader}>Sair</li>
+              </Link>{' '}
+            </>
+          ) : null}
         </ul>
       </nav>
     </header>

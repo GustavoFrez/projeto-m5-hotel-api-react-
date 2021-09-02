@@ -1,71 +1,86 @@
-.modal{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top:0;
-    left: 0;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.8);
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  animation: transicao 0.3s forwards;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
-    background-color: seashell;
-    min-width: 500px;
-    
+.container {
+  background-color: seashell;
+  min-width: 500px;
+  padding: 40px 15px;
 }
 
-.btnClose{
-    font-size: 20px;
-    border: none;
-    height: 40px;
-    line-height: 30px;
-    padding: 0 15px;
-    align-self: center;
-    
+.tituloDeletar {
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btnClose {
+  font-size: 20px;
+  border: none;
+  height: 40px;
+  line-height: 30px;
+  padding: 0 15px;
+  align-self: center;
+  margin: 10px;
 }
 
 .containerflex {
-   padding: 30px 0px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    
-    width: 100%;
-  }
-  
-  input[type=number]{
-      
-      width: 50%;
-  }
+  padding: 30px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+}
 
-  .tituloMensagem {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
-    color: #1a1a1a;
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: 600;
+input[type='number'] {
+  width: 50%;
+}
+
+.tituloMensagem {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+input {
+  width: 500px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.enviar {
+  width: 96%;
+  border: none;
+  cursor: pointer;
+  background: #ecae31;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 10px;
+  padding: 10px;
+}
+
+@keyframes transicao {
+  to {
+    opacity: initial;
+    transform: initial;
   }
-  
-  input {
-    width: 500px;
-    margin: 10px;
-    padding: 10px;
-  }
-  
-  .enviar {
-    width: 96%;
-    border: none;
-    cursor: pointer;
-    background: #ecae31;
-    color: #fff;
-    text-transform: uppercase;
-    margin: 10px;
-    padding: 10px;
-  }
+}

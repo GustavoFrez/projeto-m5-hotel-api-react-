@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import Styles from "./Modal.module.css";
+import React, { useState } from 'react';
+import Styles from './Modal.module.css';
 
 const Modal = ({ onClose = () => {}, buscaQuartos, apiUrl }) => {
   const [numeroQuarto, setNumeroQuarto] = useState(0);
   const [statusQuarto, setStatusQuarto] = useState(0);
-  const [tipoQuarto, setTipoQuarto] = useState("Standard");
+  const [tipoQuarto, setTipoQuarto] = useState('Standard');
 
   const handleNumero = (e) => {
     setNumeroQuarto(parseInt(e.target.value));
   };
 
-  const handleStatus = (e) => {    
+  const handleStatus = (e) => {
     setStatusQuarto(parseInt(e.target.value));
   };
 
@@ -19,7 +19,7 @@ const Modal = ({ onClose = () => {}, buscaQuartos, apiUrl }) => {
   };
 
   const handleClick = (e) => {
-    if (e.target.id == "modal") {
+    if (e.target.id == 'modal') {
       onClose();
     }
   };
@@ -30,20 +30,20 @@ const Modal = ({ onClose = () => {}, buscaQuartos, apiUrl }) => {
     let Quarto = {
       roomNumber: numeroQuarto,
       isOcupied: statusQuarto,
-      roomType: tipoQuarto     
+      roomType: tipoQuarto,
     };
-    console.log(Quarto)
+    console.log(Quarto);
     let post = {
-      method: "POST",
+      method: 'POST',
       headers: new Headers({
-        "Content-Type": "application/json",
-        Accept: "application/json",
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
       }),
       body: JSON.stringify(Quarto),
     };
-    let url = apiUrl + 'create'
+    let url = apiUrl + 'create';
     let json = await fetch(url, post);
-    
+
     onClose();
     setTimeout(() => {
       buscaQuartos();
@@ -79,32 +79,28 @@ const Modal = ({ onClose = () => {}, buscaQuartos, apiUrl }) => {
                     required
                   >
                     <option value="1">Ocupado</option>
-                    <option value="0">
-                      Disponível
-                    </option>
+                    <option value="0">Disponível</option>
                   </select>
                 </div>
 
                 <div>
-                <select
-                    onChange={handleTipo}                    
+                  <select
+                    onChange={handleTipo}
                     id="Tipo"
                     name="TipoTipo"
                     required
                   >
                     <option value="Standard">Standard</option>
                     <option value="Family">Family</option>
-                    <option value="Single">Single</option>                   
-                    <option value="Economic">
-                    Economic
-                    </option>
+                    <option value="Single">Single</option>
+                    <option value="Economic">Economic</option>
                   </select>
-                
                 </div>
 
-                <div>
+                <div className={Styles.centralizarBtn}>
                   <input
                     onClick={(e) => cadastrarQuarto(e, apiUrl)}
+                    className={Styles.btnEnviar}
                     class="enviar"
                     id="enviar"
                     name="enviar"

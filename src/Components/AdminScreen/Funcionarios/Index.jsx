@@ -55,12 +55,16 @@ const Funcionarios = () => {
         <table>
           <thead>
             <tr>
-              <th className={Styles.id}>ID</th>
+              <th className={Styles.th}>ID</th>
               <th>Nome</th>
-              <th className={Styles.idade}>Idade</th>
-              <th>CPF</th>
-              <th className={Styles.cargo}>Cargo</th>
-              <th className={Styles.editar}></th>
+              <th className={Styles.th}>Idade</th>
+              <th className={Styles.th}>CPF</th>
+              <th className={Styles.th}>Cargo</th>
+              <th className={Styles.th}>
+                <button className={Styles.btnModal} onClick={() => callModal()}>
+                  +
+                </button>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -124,9 +128,6 @@ const Funcionarios = () => {
           onUpdate={() => setIsUpdateVisible(false)}
         />
       ) : null}
-      <button className={Styles.btnModal} onClick={() => callModal()}>
-        +
-      </button>
     </div>
   );
 };

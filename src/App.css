@@ -3,3 +3,15 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+tr {
+  opacity: 0;
+  animation: transicao 0.3s forwards;
+}
+
+@keyframes transicao {
+  to {
+    opacity: initial;
+    transform: initial;
+  }
+}

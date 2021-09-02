@@ -22,34 +22,15 @@ thead tr:hover {
   background-color: transparent;
   color: inherit;
 }
+
 tr:nth-child(even) {
   background-color: #f9ca6c;
 }
 
-th {
-  font-weight: 600;
-  text-align: center;
-}
-th {
-  padding: 1.2em 4.5em;
+.th {
+  padding: 10px 20px;
 }
 
-td {
-  padding: 0.5em 2em;
-  text-align: center;
-}
-
-.id {
-  padding: 0.5em 0.7em;
-}
-
-.idade {
-  padding: 0.5em 0.7em;
-}
-
-.cargo {
-  padding: 0.5em 0em;
-}
 .btnModal {
   font-size: 20px;
   border: none;
@@ -64,10 +45,11 @@ td {
   grid-template-areas:
     'topo'
     'tabela';
-  grid-template-columns: 1fr;
+  grid-template-columns: 90%;
   grid-template-rows: 50px 1fr;
   gap: 20px;
-  padding: 50px;
+  justify-content: center;
+  align-content: center;
 }
 
 .editar {

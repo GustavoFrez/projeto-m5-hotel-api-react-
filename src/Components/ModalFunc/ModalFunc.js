@@ -1,43 +1,40 @@
-import React, { useState } from "react";
-import Styles from "./Modal.module.css";
+import React, { useState } from 'react';
+import Styles from './Modal.module.css';
 
-const Modal = ({ onClose = () => { }, buscaFunc, apiUrl }) => {
-
-  const [nomeFunc, setNomeFunc] = useState('')
-  const [idadeFunc, setIdadeFunc] = useState('')
-  const [cpfFunc, setCpfFunc] = useState('')
-  const [cargoFunc, setCargoFunc] = useState('')
-  const [senhaFunc, setSenhaFunc] = useState('')
+const Modal = ({ onClose = () => {}, buscaFunc, apiUrl }) => {
+  const [nomeFunc, setNomeFunc] = useState('');
+  const [idadeFunc, setIdadeFunc] = useState('');
+  const [cpfFunc, setCpfFunc] = useState('');
+  const [cargoFunc, setCargoFunc] = useState('');
+  const [senhaFunc, setSenhaFunc] = useState('');
 
   const handleNome = (e) => {
-    setNomeFunc(e.target.value)
-  }
+    setNomeFunc(e.target.value);
+  };
 
   const handleIdade = (e) => {
-    setIdadeFunc(e.target.value)
-  }
+    setIdadeFunc(e.target.value);
+  };
 
   const handleCpf = (e) => {
-    setCpfFunc(e.target.value)
-  }
+    setCpfFunc(e.target.value);
+  };
 
   const handleCargo = (e) => {
-    setCargoFunc(e.target.value)
-  }
+    setCargoFunc(e.target.value);
+  };
 
   const handleSenha = (e) => {
-    setSenhaFunc(e.target.value)
-  }
+    setSenhaFunc(e.target.value);
+  };
 
   const handleClick = (e) => {
-    if (e.target.id == "modal") {
-      onClose()
+    if (e.target.id == 'modal') {
+      onClose();
     }
-
-  }
+  };
 
   const cadastrarFunc = async (e, apiUrl) => {
-
     e.preventDefault();
 
     let func = {
@@ -45,33 +42,29 @@ const Modal = ({ onClose = () => { }, buscaFunc, apiUrl }) => {
       idade: idadeFunc,
       cpf: cpfFunc,
       cargo: cargoFunc,
-      senha: senhaFunc
-    }
-
-    let post = {
-      method: "POST",
-      headers: new Headers({
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }),
-      body: JSON.stringify(func)
+      senha: senhaFunc,
     };
 
-    let json = await fetch(apiUrl, post)
-    onClose()
+    let post = {
+      method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      }),
+      body: JSON.stringify(func),
+    };
+
+    let json = await fetch(apiUrl, post);
+    onClose();
     setTimeout(() => {
-      buscaFunc()
+      buscaFunc();
     }, 1000);
-
-
-  }
+  };
 
   return (
     <div id="modal" onClick={handleClick} className={Styles.modal}>
       <div className={Styles.container}>
-
         <div className={Styles.content}>
-
           <div className={Styles.formularioContato}>
             <div className={Styles.containerflex}>
               <form>
@@ -130,9 +123,10 @@ const Modal = ({ onClose = () => { }, buscaFunc, apiUrl }) => {
                     placeholder="Senha"
                   />
                 </div>
-                <div>
+                <div className={Styles.centralizarBtn}>
                   <input
                     onClick={(e) => cadastrarFunc(e, apiUrl)}
+                    className={Styles.btnEnviar}
                     class="enviar"
                     id="enviar"
                     name="enviar"
@@ -143,10 +137,10 @@ const Modal = ({ onClose = () => { }, buscaFunc, apiUrl }) => {
               </form>
             </div>
           </div>
-
-
         </div>
-        <button className={Styles.btnClose} onClick={() => onClose()}>Fechar</button>
+        <button className={Styles.btnClose} onClick={() => onClose()}>
+          Fechar
+        </button>
       </div>
     </div>
   );
