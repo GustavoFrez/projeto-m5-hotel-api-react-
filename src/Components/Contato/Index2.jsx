@@ -135,6 +135,7 @@ const Contato2 = () => {
                 className={Styles.textAreaContato}
                 type="text"
                 name="mensagem"
+                rows='7'
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.mensagem}

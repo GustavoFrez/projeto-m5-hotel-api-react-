@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Styles from './AdminScreen.module.css';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import MenuAdmin from './MenuAdmin/Index';
@@ -6,11 +6,12 @@ import Funcionarios from './Funcionarios/Index';
 import Clientes from './Clientes/Index'
 import Quartos from './Quartos/Index'
 import Mobilia from './Mobilia/Index'
+import ModalSair from '../ModalSair/ModalSair'
 
 const AdminScreen = () => {
 
+  
   const history = useHistory()
-
   const {talogado} = useContext
 
   if(!talogado){
@@ -22,7 +23,7 @@ const AdminScreen = () => {
     <div className={Styles.divContainerPai}>
       <MenuAdmin />
       <div className={Styles.divBoxAdmin}>
-        <Switch>
+        <Switch>        
           <Route exact path="/AdminScreen/funcionarios">
             <Funcionarios />
           </Route>
@@ -36,6 +37,7 @@ const AdminScreen = () => {
             <Mobilia />
           </Route>
         </Switch>
+     
       </div>
     </div>
   );

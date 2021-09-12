@@ -11,6 +11,7 @@
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
   animation: transicao 0.3s forwards;
+  
 }
 
 .container {
@@ -20,6 +21,8 @@
   min-width: 500px;
   padding: 30px;
   border-radius: 2px;
+  transform: translateY(-50px);
+  animation: animedown 0.5s forwards;
 }
 
 .btnClose {
@@ -92,6 +95,12 @@ input[type='submit'] {
 @keyframes transicao {
   to {
     opacity: initial;
+    transform: initial;
+  }
+}
+@keyframes animedown {
+  to {
+    
     transform: initial;
   }
 }

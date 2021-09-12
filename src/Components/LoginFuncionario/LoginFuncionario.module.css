@@ -32,6 +32,9 @@
   border-radius: 5px;
   padding: 70px 30px;
   text-align: center;
+  transform: translateX(-50px);
+  animation: animedown 0.3s forwards;
+
 }
 
 .centralizaLogin {
@@ -111,5 +114,12 @@
     border: none;
     outline: none;
     margin-bottom: 12px;
+  }
+}
+
+@keyframes animedown {
+  to {
+    
+    transform: initial;
   }
 }

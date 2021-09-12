@@ -19,6 +19,8 @@
   background-color: #fff;
   min-width: 500px;
   padding: 20px 20px;
+  transform: translateY(-50px);
+  animation: animedown 0.5s forwards;
 }
 
 .btnClose {
@@ -88,6 +90,13 @@ input {
 @keyframes transicao {
   to {
     opacity: initial;
+    transform: initial;
+  }
+}
+
+@keyframes animedown {
+  to {
+    
     transform: initial;
   }
 }

@@ -37,7 +37,8 @@ function App() {
             <AdminScreen /> 
           </RotaPrivada>
         </Switch>
-        <Footer />        
+        <Footer />   
+            
       </BrowserRouter>
       </Session>
     </div>
