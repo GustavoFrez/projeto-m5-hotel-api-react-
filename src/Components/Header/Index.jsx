@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import logo from '../../Assets/img/logo.png';
 import Styles from './Header.module.css';
 import { Context } from '../../SessionProvider';
+import ModalSair from '../ModalSair/ModalSair'
 
 const Header = () => {
-  const { talogado, handleLoggout } = useContext(Context);
+  const { talogado, isSairVisible, setIsSairVisible } = useContext(Context);
 
   return (
     <header>
@@ -37,7 +38,7 @@ const Header = () => {
               <Link
                 className={Styles.linkHeader}
                 
-                onClick={handleLoggout}
+                onClick={()=>setIsSairVisible(true)}
               >
                 <li className={Styles.liHeader}>Sair</li>
               </Link>
@@ -45,6 +46,9 @@ const Header = () => {
           ) : null}
         </ul>
       </nav>
+
+      {isSairVisible ? <ModalSair/> : null}
+
     </header>
   );
 };

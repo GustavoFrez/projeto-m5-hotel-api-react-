@@ -6,9 +6,12 @@ const Context = createContext();
 
 function Session({ children }) {
 
+    
     let talogado = islogged()
 
-    const [session, setSession] = useState({funcionario: ''})    
+    const [session, setSession] = useState({funcionario: ''})  
+      
+    const [isSairVisible, setIsSairVisible] = useState(false);
 
     const handleLoggout = (Nomefuncionario)=>{
         localStorage.setItem('talogado', false)
@@ -23,8 +26,10 @@ function Session({ children }) {
             
     }
 
+    
+
     return (
-        <Context.Provider value={{session, talogado, handleLoginFuncionario, handleLoggout}} >
+        <Context.Provider value={{session, talogado, handleLoginFuncionario, handleLoggout, isSairVisible, setIsSairVisible}} >
             {children}
         </Context.Provider>
     );
